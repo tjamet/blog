@@ -8,6 +8,7 @@
 <html>
 	<head>
 		<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
+		<base href="{{ .Site.BaseURL }}">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
@@ -19,7 +20,7 @@
 		<meta name="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
 		<meta name="og:url" content="{{ .Permalink }}">
 		{{ if not .Site.Params.avatar.hide }}
-		<meta name="og:image" content="{{ .Site.BaseURL }}images/{{ .Site.Params.sidebar.avatar }}">
+		<meta name="og:image" content="{{ .Site.Params.sidebar.avatar }}">
 		{{ end }}
 		{{ end }}
 
