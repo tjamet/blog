@@ -1,2 +1,2 @@
-# blog
-A blog of tech (or not) articles
+# Sources for my personal blog
+<https://blog.thib-o.eu>
