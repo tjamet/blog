@@ -1,7 +1,7 @@
 {{ "<!-- Header -->" | safeHTML }}
 <header id="header">
 	{{ if not .Site.Params.avatar.hide }}
-	<a href="{{ .Site.BaseURL }}" class="image avatar"><img src="{{ .Site.Params.sidebar.avatar }}" alt="" /></a>
+	<a href="{{ .Site.BaseURL | relURL }}" class="image avatar"><img src="{{ .Site.Params.sidebar.avatar }}" alt="" /></a>
 	{{ end }}
 	{{ with .Site.Params.sidebar.bio }}
 		<h1>{{ . | markdownify }}</h1>
@@ -11,7 +11,7 @@
 		<nav id="sidebar">
 			<ul>
 			{{ range . }}
-				<li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+				<li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
 			{{ end }}
 			</ul>
 		</nav>

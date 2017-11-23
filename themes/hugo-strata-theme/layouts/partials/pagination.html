@@ -1,6 +1,6 @@
 {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     {{ if .Paginator.HasPrev }}
-        <a class="button" rel="prev" href="{{ .Site.BaseURL }}{{.Paginator.Prev.URL}}">
+        <a class="button" rel="prev" href="{{.Paginator.Prev.URL | relURL}}">
             « Newer
         </a>
     {{ end }}
@@ -10,7 +10,7 @@
     {{ end }}
 
     {{ if .Paginator.HasNext }}
-        <a class="button" rel="next" href="{{ .Site.BaseURL }}{{.Paginator.Next.URL}}">
+        <a class="button" rel="next" href="{{.Paginator.Next.URL | relURL}}">
             Older »
         </a>
     {{ end }}

@@ -8,7 +8,7 @@
     {{ if gt $categoriesLen 0 }}
         <i class="fa fa-folder"></i>&nbsp;&nbsp;
         {{ range $k, $v := .Params.categories }}
-        <a class="article-category-link" href="{{ $.Site.BaseURL }}categories/{{ . | urlize | lower }}">{{ . }}</a>
+        <a class="article-category-link" href="categories/{{ . | urlize | relURL | lower }}">{{ . }}</a>
         {{ if lt $k (sub $categoriesLen 1) }}&middot;{{ end }}
         {{ end }}
     {{ end }}
@@ -19,7 +19,7 @@
    {{ if gt $tagsLen 0 }}
        &nbsp;&nbsp;<i class="fa fa-tags"></i>&nbsp;&nbsp;
        {{ range $k, $v := .Params.tags }}
-       <a class="article-category-link" href="{{ $.Site.BaseURL }}tags/{{ . | urlize | lower }}">{{ . }}</a>
+       <a class="article-category-link" href="tags/{{ . | urlize | relURL | lower }}">{{ . }}</a>
        {{ if lt $k (sub $tagsLen 1) }}&middot;{{ end }}
        {{ end }}
    {{ end }}

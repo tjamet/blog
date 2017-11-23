@@ -8,7 +8,7 @@
 <html>
 	<head>
 		<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} &middot; {{ .Site.Title }}{{ end }}</title>
-		<base href="{{ .Site.BaseURL }}">
+		<base href="{{ .Site.BaseURL | relURL }}">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		{{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
@@ -18,7 +18,7 @@
 		{{ if not .Site.Params.OpenGraph.hide }}
 		<meta name="og:site_name" content="{{ .Site.Title }}">
 		<meta name="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-		<meta name="og:url" content="{{ .Permalink }}">
+		<meta name="og:url" content="{{ .Permalink | relURL}}">
 		{{ if not .Site.Params.avatar.hide }}
 		<meta name="og:image" content="{{ .Site.Params.sidebar.avatar }}">
 		{{ end }}
@@ -26,16 +26,16 @@
 
 		{{ .Hugo.Generator }}
 
-		{{ "<!--[if lte IE 8]>" | safeHTML }}<script src='{{ .Site.BaseURL }}js/ie/html5shiv.js'></script>{{ "<![endif]-->" | safeHTML}}
+		{{ "<!--[if lte IE 8]>" | safeHTML }}<script src='{{ .Site.BaseURL | relURL }}js/ie/html5shiv.js'></script>{{ "<![endif]-->" | safeHTML}}
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{{ .Site.BaseURL }}css/main.css" />
-		{{ "<!--[if lte IE 8]>" | safeHTML }}<link rel="stylesheet" href="{{ .Site.BaseURL }}/css/ie8.css">{{ "<![endif]-->" | safeHTML}}
+		<link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}css/main.css" />
+		{{ "<!--[if lte IE 8]>" | safeHTML }}<link rel="stylesheet" href="{{ .Site.BaseURL | relURL }}/css/ie8.css">{{ "<![endif]-->" | safeHTML}}
 
 		{{ with .RSSLink }}
-		<link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-		<link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
+		<link href="{{ . | relURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
+		<link href="{{ . | relURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
 		{{ end }}
 		{{ range .Site.Params.custom_css }}
-		<link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}">
+		<link rel="stylesheet" href="{{ $.Site.BaseURL | relURL }}{{ . }}">
 		{{ end }}
 	</head>
