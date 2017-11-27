@@ -1,0 +1,117 @@
+baseURL = "https://blog.thib-o.eu/"
+languageCode = "en-us"
+title = "Thibault Jamet's blog"
+theme = "hugo-strata-theme"
+# disqusShortname = "spf13"
+# Enable Google Analytics by inserting your tracking code
+googleAnalytics = ""
+# Define how many posts should appear on a site
+paginate = 10
+pygmentsUseClasses=true
+PygmentsCodeFences=true
+RelativeURLs=true
+
+[params]
+	# To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+	name = "Thibault Jamet"
+	description = "Thibault Jamet's blog"
+
+	# Format dates with Go's time formatting
+	date_format = "2006-01-02"
+
+	# Add read time estimates in the format "X min read"
+	show_read_time = false
+
+	# Add custom assets with their paths relative to the static folder
+	custom_js   = []
+	custom_css  = ["css/code.css"]
+
+
+	[params.sidebar]
+		# Replace the avatar with a picture of your own under static/images
+		avatar = "//gravatar.com/avatar/23b6c3262357987d5eb5caa3c3252fdd"
+		# Use Markdown to format the string. This works nearly all over the theme
+		bio = ""
+		# The icons will be shown if you enter your username
+		twitter = "tjamet"
+		github = "tjamet"
+		#gitlab = "spf13"
+		#dribbble = ""
+		#facebook = ""
+		#googleplus = ""
+		#flickr = ""
+		#linkedin = ""
+
+		copyright = [
+			"&copy; Thibault Jamet",
+			"Design: [HTML5 UP](//html5up.net)",
+		]
+
+
+	# [params.about]
+	# 	hide  = false
+	# 	title = "Ipsum lorem dolor aliquam ante commodo magna sed accumsan arcu neque."
+	# 	content = "Accumsan orci faucibus id eu lorem semper. Eu ac iaculis ac nunc nisi lorem vulputate lorem neque cubilia ac in adipiscing in curae lobortis tortor primis integer massa adipiscing id nisi accumsan pellentesque commodo blandit enim arcu non at amet id arcu magna. Accumsan orci faucibus id eu lorem semper nunc nisi lorem vulputate lorem neque cubilia."
+
+
+	# [params.portfolio]
+	# 	hide  = false
+	# 	title = "Recent Work"
+
+	# 	# The images and thumbnails are stored under static/images
+	# 	# Create and change subfolders as you like
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/01.jpg"
+	# 		thumb = "thumbs/01.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/02.jpg"
+	# 		thumb = "thumbs/02.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/03.jpg"
+	# 		thumb = "thumbs/03.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/04.jpg"
+	# 		thumb = "thumbs/04.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/05.jpg"
+	# 		thumb = "thumbs/05.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	# 	[[params.portfolio.gallery]]
+	# 		image = "fulls/06.jpg"
+	# 		thumb = "thumbs/06.jpg"
+	# 		title = "Lorem ipsum dolor."
+	# 		description = "Lorem ipsum dolor sit amet."
+
+	[params.recentposts]
+		hide  = false
+		title = "Recent blog posts"
+
+	[params.contact]
+		hide  = true
+
+
+# Menu links that appear on the left sidebar
+[[menu.main]]
+	name = "Home"
+	url  = "/"
+	weight = 10
+
+[[menu.main]]
+	name = "Blog"
+	url  = "post/"
+	weight = 0
